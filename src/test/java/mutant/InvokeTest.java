@@ -15,6 +15,7 @@ import mutant.business.BusinessMutant;
 import mutant.exception.InvalidOrderMatrixException;
 import mutant.exception.NoMutantDNAException;
 import mutant.model.Dna;
+import mutant.model.Stats;
 
 //Clase de Pruebas de invocacion del Handler
 class InvokeTest {
@@ -24,11 +25,13 @@ class InvokeTest {
 	 
   private HandlerMutant handler;
   private AutoCloseable closeable;
+  private HandlerMutantAnalisysStats handlerMutantAnalisysStats;
 
   @BeforeEach
   public void initBussiness() {
 	 closeable = MockitoAnnotations.openMocks(this);
 	 handler =  new HandlerMutant(businessMutant);
+	 handlerMutantAnalisysStats = new HandlerMutantAnalisysStats(businessMutant);
   }
 	 
   @AfterEach
@@ -81,6 +84,16 @@ class InvokeTest {
     String actualMessage = exception.getMessage();
     assertTrue(actualMessage.contains(expectedMessage));  
   }
+  
+  //Test del llamado al Handler 
+  @Test
+  void invokeStatsHandler() {
+	  Context context = new TestContext();
+	  Mockito.when(businessMutant.getStats()).thenReturn(new Stats());
+	  Stats stats =  handlerMutantAnalisysStats.handleRequest("", context);
+	  assertTrue(stats.getRatio() == 0);	  
+  }
+  
   
   
   

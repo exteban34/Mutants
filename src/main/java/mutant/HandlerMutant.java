@@ -12,7 +12,7 @@ import mutant.exception.InvalidOrderMatrixException;
 import mutant.exception.NoMutantDNAException;
 import mutant.model.Dna;
 
-
+// Handler value: example.HandlerDivide
 public class HandlerMutant implements RequestHandler<Dna, String>{
   Gson gson = new GsonBuilder().setPrettyPrinting().create();
   BusinessMutant businessMutant;
@@ -47,7 +47,7 @@ public class HandlerMutant implements RequestHandler<Dna, String>{
     	return "Congratulations is mutant DNA !!";
     }else {
     	//En caso de que no se trate de un mutante se lanza una RuntimeException customizada para ser captada en Api Gateway 
-    	//y así dar el comportamiento esperado
+    	// y así dar el comportamiento esperado
     	logger.log("Exception: 403 Forbidden: Not mutant DNA ");    	
     	throw new NoMutantDNAException("403 Forbidden: Not mutant DNA");
 	}    

@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import mutant.model.Stats;
 import mutant.persistence.MutantDynamoBDPersistence;
 
 public class BusinessMutantTest {
@@ -20,6 +21,7 @@ public class BusinessMutantTest {
 	String[] arrayzeroMutantString=new String[] {"AGTAG", "GATAG", "ATAGG", "TTTAG", "ATGGG"};
 	String[] noMutantMatrix =new String[] {"ATGA", "AAAG", "ATAA", "CTGC"};
 	String[] invlaidMatrix=new String[] {"AGTAG", "ATAG", "ATGG", "TTTAG", "ATGGG"};
+	Stats stats = new Stats(40, 100, 0L);
 	
 	
 	 @Mock
@@ -148,6 +150,23 @@ public class BusinessMutantTest {
 	public void isInvalidMatrix() {
 		assertFalse(businessMutant.isValidMatrixOrder(invlaidMatrix));
 	}
+	
+	// Bloque de pruebas del metodo getStats
+	@Test
+	public void validateStatsWithZeroAnalisys() {
+		Mockito.when(mutantDynamoBDPersistence.getStats()).thenReturn(new Stats());
+		Stats stats =  businessMutant.getStats();
+		assertTrue(stats.getRatio() == 0);
+	}
+	@Test
+	public void validateStats() {
+		Mockito.when(mutantDynamoBDPersistence.getStats()).thenReturn(stats);
+		Stats stats =  businessMutant.getStats();
+		assertTrue(stats.getRatio() == 0.4);
+	}
+	
+	
+	
 	
 	
 }

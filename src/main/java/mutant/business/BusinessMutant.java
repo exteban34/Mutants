@@ -2,6 +2,7 @@ package mutant.business;
 
 import static java.lang.Math.min;
 
+import mutant.model.Stats;
 import mutant.persistence.MutantDynamoBDPersistence;
 
 import static java.lang.Math.max;
@@ -106,11 +107,7 @@ public class BusinessMutant {
 		}else {
 			mutantDynamoBDPersistence.saveMutantAnalisys(jsonDNA, false);
 			return false;
-		}
-		
-		
-		
-		
+		}		
 	}
 	
 	//Metodo para verificar que se trata d euna matriz cuadrada
@@ -122,6 +119,19 @@ public class BusinessMutant {
 			}
 		}		
 		return true;	
+	}
+	
+	//Metodo para obtener las estadisticas y controlar un posible error cuando no existen analisis
+	public Stats getStats() {
+		mutantDynamoBDPersistence.initDynamoDbClient();
+		Stats stats = mutantDynamoBDPersistence.getStats();		
+		if(stats.getNumberofAnalisys()==0) {
+			stats.setRatio(0);
+		}else {
+			stats.setRatio(stats.getNumberOfMutants()/stats.getNumberofAnalisys());
+		}		
+		return stats;
+		
 	}
 
 }

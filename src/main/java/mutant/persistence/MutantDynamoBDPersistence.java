@@ -5,8 +5,14 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.ItemCollection;
+import com.amazonaws.services.dynamodbv2.document.QueryOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.document.spec.PutItemSpec;
+import com.amazonaws.services.dynamodbv2.document.spec.QuerySpec;
+import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
+
+import mutant.model.Stats;
 
 public class MutantDynamoBDPersistence {
 	
@@ -27,5 +33,27 @@ public class MutantDynamoBDPersistence {
 		               .withBoolean("isMutant", isMutant)));
 		  return true;
 		 }
+	  
+	  public Stats getStats() {
+		  Stats stats = new Stats();
+		  Table table = dynamoDb.getTable("ResultadosDivisiones");
+		  QuerySpec spec = new QuerySpec()
+				  .withKeyConditionExpression("resultado = :v_resultado")
+				  .withFilterExpression("Denominador = :v_denominador")
+				  .withValueMap(new ValueMap()
+						  .withInt(":v_resultado", 20)
+						  .withInt(":v_denominador", 1))
+				  .withConsistentRead(true);		 
+		  ItemCollection<QueryOutcome> items = table.query(spec);
+//		  Iterator<Item> iterator = items.iterator();		  
+//		  Item item = null;
+		  for (Item item : items) {
+			  stats.setNumberofAnalisys(item.getInt("Numerador"));
+		      stats.setNumberOfMutants(item.getInt("resultado"));
+		}
+		
+		return stats;
+		  
+	  }
 
 }

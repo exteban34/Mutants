@@ -2,7 +2,7 @@ package mutant.model;
 
 public class Dna {
 	
-	public String[] dna;
+	private String[] dna;
 
 	public String[] getDna() {
 		return dna;
