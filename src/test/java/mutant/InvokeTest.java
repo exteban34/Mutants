@@ -6,23 +6,18 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.amazonaws.services.lambda.runtime.Context;
 
 import mutant.business.BusinessMutant;
 import mutant.exception.InvalidOrderMatrixException;
 import mutant.exception.NoMutantDNAException;
 import mutant.model.Dna;
-import mutant.persistence.MutantDynamoBDPersistence;
 
+//Clase de Pruebas de invocacion del Handler
 class InvokeTest {
-  private static final Logger logger = LoggerFactory.getLogger(InvokeTest.class);
   
   @Mock
   BusinessMutant businessMutant;
@@ -41,6 +36,7 @@ class InvokeTest {
 	 closeable.close();
   }  
   
+  //Test del llamado con una matriz DNA Mutante
   @Test
   void invokeMutantDNATest() { 
     Dna event = new Dna();
@@ -52,7 +48,8 @@ class InvokeTest {
     assertTrue("Congratulations is mutant DNA !!".equals(handler.handleRequest(event, context )) );
   }
  
-  
+  //Test del llamado con una matriz DNA Mutante 
+  // Valida el lanzamiento de la excepcion  NoMutantDNAException
   @Test
   void invokeNoMutantDNATest() {
 	Dna event = new Dna();
@@ -69,6 +66,8 @@ class InvokeTest {
     assertTrue(actualMessage.contains(expectedMessage));  
   }
   
+  //Test del llamado con una matriz incorrecta (matriz no cuadrada)
+  // Valida el lanzamiento de la excepcion  InvalidOrderMatrixException
   @Test
   void invokeInvalidMatrixTest() {
 	    Dna event = new Dna();

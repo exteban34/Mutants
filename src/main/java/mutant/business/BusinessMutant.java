@@ -8,17 +8,18 @@ import static java.lang.Math.max;
 
 public class BusinessMutant {
 	
-	public MutantDynamoBDPersistence bd;
+	public MutantDynamoBDPersistence mutantDynamoBDPersistence;
 	
 	public BusinessMutant(MutantDynamoBDPersistence bd) {
 		super();
-		this.bd = bd;
+		this.mutantDynamoBDPersistence = bd;
 	}
 	
 	public BusinessMutant() {
-		bd = new MutantDynamoBDPersistence();
+		mutantDynamoBDPersistence = new MutantDynamoBDPersistence();
 	}
 
+	// Metodo que verifica si un String es una cadena mutante (secuencia de cuatro letras iguales​)
 	public boolean isMutantString (String string) {
 		
 		switch (string) {
@@ -35,6 +36,7 @@ public class BusinessMutant {
 		}
 	};
 	
+	//Metodo que cuenta cuantas  cadenas mutantes existen en un String (No se consideran traslapes)
 	public int numberOfMutantStringsInString(String string) {
 		String aux;
 		int numberOfMutantStrings = 0;	
@@ -50,7 +52,8 @@ public class BusinessMutant {
 		}
 		return numberOfMutantStrings;
 		};
-
+		
+	//Metodo que cuenta cuantas cadenas mutantes existen en la matriz recorriendola por filas
 	public int numberOfMutantStringsInRows(String[] array) {
 		int numberOfMutantStrings =0;
 		
@@ -60,6 +63,7 @@ public class BusinessMutant {
 		return numberOfMutantStrings;
 		}
 	
+	//Metodo que cuenta cuantas cadenas mutantes existen en la matriz recorriendola por Columnas
 	public int numberOfMutantStringsInColumns(String[] array) {
 		int numberOfMutantStringsInColumns=0;
 		String aux = "";
@@ -73,6 +77,7 @@ public class BusinessMutant {
 		 return numberOfMutantStringsInColumns;		
 	}
 	
+	//Metodo que cuenta cuantas cadenas mutantes existen en la matriz recorriendola de manera oblicua
 	public int numberOfMutantStringsInDiagonals(String[] array) {
 		int numberOfMutantStringsInDiag=0;
 		int n = array.length;
@@ -89,15 +94,17 @@ public class BusinessMutant {
 		
 	}
 
+	//Metodo que cuenta la totalidad de cadenas mutantes y define si se trata de un mutante
+	//Se encarga de lanzar la capa de percistencia para guardar la data
 	public boolean isMutant(String[] array, String jsonDNA) {
 		
-		bd.initDynamoDbClient();
+		mutantDynamoBDPersistence.initDynamoDbClient();
 		int numberofMutantStringInDNA = numberOfMutantStringsInRows(array)+ numberOfMutantStringsInColumns(array)+ numberOfMutantStringsInDiagonals(array) ;
 		if (2<= numberofMutantStringInDNA) {
-			bd.saveMutantAnalisys(jsonDNA, true);
+			mutantDynamoBDPersistence.saveMutantAnalisys(jsonDNA, true);
 			return true;
 		}else {
-			bd.saveMutantAnalisys(jsonDNA, false);
+			mutantDynamoBDPersistence.saveMutantAnalisys(jsonDNA, false);
 			return false;
 		}
 		
@@ -106,6 +113,7 @@ public class BusinessMutant {
 		
 	}
 	
+	//Metodo para verificar que se trata d euna matriz cuadrada
 	public boolean isValidMatrixOrder(String[] array) {
 		int n = array.length;
 		for (String string : array) {
