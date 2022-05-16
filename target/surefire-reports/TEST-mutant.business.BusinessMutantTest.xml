@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mutant.business.BusinessMutantTest" time="0.51" tests="25" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="mutant.business.BusinessMutantTest" time="0.529" tests="25" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="CO"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
-    <property name="sun.java.command" value="D:\Usuarios\heinalri\AppData\Local\Temp\surefire7743136078074921481\surefirebooter3315293822563852325.jar D:\Usuarios\heinalri\AppData\Local\Temp\surefire7743136078074921481 2022-05-16T10-50-32_134-jvmRun1 surefire4174883807317069987tmp surefire_0821429002144867663tmp"/>
+    <property name="sun.java.command" value="D:\Usuarios\heinalri\AppData\Local\Temp\surefire9185080374359345114\surefirebooter4173788332302474761.jar D:\Usuarios\heinalri\AppData\Local\Temp\surefire9185080374359345114 2022-05-16T17-03-48_951-jvmRun1 surefire8733414264458845579tmp surefire_01661480153946864928tmp"/>
     <property name="surefire.test.class.path" value="D:\Z Heinner Personal\Java\Proyectos\LambdaMutants\java-mutants\target\test-classes;D:\Z Heinner Personal\Java\Proyectos\LambdaMutants\java-mutants\target\classes;D:\Usuarios\heinalri\.m2\repository\com\amazonaws\aws-lambda-java-core\1.2.1\aws-lambda-java-core-1.2.1.jar;D:\Usuarios\heinalri\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;D:\Usuarios\heinalri\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.2\log4j-api-2.17.2.jar;D:\Usuarios\heinalri\.m2\repository\org\apache\logging\log4j\log4j-core\2.17.2\log4j-core-2.17.2.jar;D:\Usuarios\heinalri\.m2\repository\org\apache\logging\log4j\log4j-slf4j18-impl\2.17.2\log4j-slf4j18-impl-2.17.2.jar;D:\Usuarios\heinalri\.m2\repository\org\slf4j\slf4j-api\1.8.0-beta4\slf4j-api-1.8.0-beta4.jar;D:\Usuarios\heinalri\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;D:\Usuarios\heinalri\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;D:\Usuarios\heinalri\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;D:\Usuarios\heinalri\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;D:\Usuarios\heinalri\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;D:\Usuarios\heinalri\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;D:\Usuarios\heinalri\.m2\repository\com\amazonaws\aws-java-sdk-dynamodb\1.11.0\aws-java-sdk-dynamodb-1.11.0.jar;D:\Usuarios\heinalri\.m2\repository\com\amazonaws\aws-java-sdk-s3\1.11.0\aws-java-sdk-s3-1.11.0.jar;D:\Usuarios\heinalri\.m2\repository\com\amazonaws\aws-java-sdk-kms\1.11.0\aws-java-sdk-kms-1.11.0.jar;D:\Usuarios\heinalri\.m2\repository\com\amazonaws\aws-java-sdk-core\1.11.0\aws-java-sdk-core-1.11.0.jar;D:\Usuarios\heinalri\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;D:\Usuarios\heinalri\.m2\repository\org\apache\httpcomponents\httpclient\4.5.2\httpclient-4.5.2.jar;D:\Usuarios\heinalri\.m2\repository\org\apache\httpcomponents\httpcore\4.4.4\httpcore-4.4.4.jar;D:\Usuarios\heinalri\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar;D:\Usuarios\heinalri\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.5.3\jackson-databind-2.5.3.jar;D:\Usuarios\heinalri\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.5.0\jackson-annotations-2.5.0.jar;D:\Usuarios\heinalri\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.5.3\jackson-core-2.5.3.jar;D:\Usuarios\heinalri\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-cbor\2.5.3\jackson-dataformat-cbor-2.5.3.jar;D:\Usuarios\heinalri\.m2\repository\joda-time\joda-time\2.8.1\joda-time-2.8.1.jar;D:\Usuarios\heinalri\.m2\repository\org\mockito\mockito-junit-jupiter\4.5.1\mockito-junit-jupiter-4.5.1.jar;D:\Usuarios\heinalri\.m2\repository\org\mockito\mockito-core\4.5.1\mockito-core-4.5.1.jar;D:\Usuarios\heinalri\.m2\repository\net\bytebuddy\byte-buddy\1.12.9\byte-buddy-1.12.9.jar;D:\Usuarios\heinalri\.m2\repository\net\bytebuddy\byte-buddy-agent\1.12.9\byte-buddy-agent-1.12.9.jar;D:\Usuarios\heinalri\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="D:\Usuarios\heinalri"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="D:\Usuarios\heinalri\AppData\Local\Temp\surefire7743136078074921481\surefirebooter3315293822563852325.jar"/>
+    <property name="surefire.real.class.path" value="D:\Usuarios\heinalri\AppData\Local\Temp\surefire9185080374359345114\surefirebooter4173788332302474761.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_73\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_73\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -60,29 +60,29 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="oneMutantStringInDiagonals" classname="mutant.business.BusinessMutantTest" time="0.454"/>
+  <testcase name="oneMutantStringInDiagonals" classname="mutant.business.BusinessMutantTest" time="0.474"/>
   <testcase name="twoConsecutiveMutantStringsSameLetter" classname="mutant.business.BusinessMutantTest" time="0"/>
-  <testcase name="zeroMutantStringInColumns" classname="mutant.business.BusinessMutantTest" time="0.001"/>
-  <testcase name="zeroMutantStringInDiagonals" classname="mutant.business.BusinessMutantTest" time="0.001"/>
+  <testcase name="zeroMutantStringInColumns" classname="mutant.business.BusinessMutantTest" time="0"/>
+  <testcase name="zeroMutantStringInDiagonals" classname="mutant.business.BusinessMutantTest" time="0.005"/>
   <testcase name="zeroMutantStringInRows" classname="mutant.business.BusinessMutantTest" time="0.001"/>
-  <testcase name="validateStats" classname="mutant.business.BusinessMutantTest" time="0.014"/>
+  <testcase name="validateStats" classname="mutant.business.BusinessMutantTest" time="0.015"/>
   <testcase name="isMutantVerify2" classname="mutant.business.BusinessMutantTest" time="0.002"/>
   <testcase name="twoMutantStringInRows" classname="mutant.business.BusinessMutantTest" time="0.001"/>
   <testcase name="twoNonConsecutiveMutantStrings" classname="mutant.business.BusinessMutantTest" time="0"/>
-  <testcase name="notMutantString" classname="mutant.business.BusinessMutantTest" time="0.003"/>
+  <testcase name="notMutantString" classname="mutant.business.BusinessMutantTest" time="0.001"/>
   <testcase name="oneMutantStringInColumns" classname="mutant.business.BusinessMutantTest" time="0.001"/>
   <testcase name="twoConsecutiveMutantStrings" classname="mutant.business.BusinessMutantTest" time="0"/>
-  <testcase name="oneOnlyMutantString" classname="mutant.business.BusinessMutantTest" time="0"/>
-  <testcase name="isInvalidMatrix" classname="mutant.business.BusinessMutantTest" time="0"/>
+  <testcase name="oneOnlyMutantString" classname="mutant.business.BusinessMutantTest" time="0.001"/>
+  <testcase name="isInvalidMatrix" classname="mutant.business.BusinessMutantTest" time="0.001"/>
   <testcase name="twoMutantStringInRowsInOneString" classname="mutant.business.BusinessMutantTest" time="0"/>
   <testcase name="isValidMatrix" classname="mutant.business.BusinessMutantTest" time="0.001"/>
-  <testcase name="isMutantVerify" classname="mutant.business.BusinessMutantTest" time="0.001"/>
-  <testcase name="isNotMutantVerify" classname="mutant.business.BusinessMutantTest" time="0"/>
-  <testcase name="isMutantStringA" classname="mutant.business.BusinessMutantTest" time="0.001"/>
-  <testcase name="isMutantStringC" classname="mutant.business.BusinessMutantTest" time="0.001"/>
-  <testcase name="isMutantStringG" classname="mutant.business.BusinessMutantTest" time="0.003"/>
-  <testcase name="isMutantStringT" classname="mutant.business.BusinessMutantTest" time="0.001"/>
+  <testcase name="isMutantVerify" classname="mutant.business.BusinessMutantTest" time="0.003"/>
+  <testcase name="isNotMutantVerify" classname="mutant.business.BusinessMutantTest" time="0.002"/>
+  <testcase name="isMutantStringA" classname="mutant.business.BusinessMutantTest" time="0.002"/>
+  <testcase name="isMutantStringC" classname="mutant.business.BusinessMutantTest" time="0"/>
+  <testcase name="isMutantStringG" classname="mutant.business.BusinessMutantTest" time="0.001"/>
+  <testcase name="isMutantStringT" classname="mutant.business.BusinessMutantTest" time="0"/>
   <testcase name="validateStatsWithZeroAnalisys" classname="mutant.business.BusinessMutantTest" time="0.001"/>
-  <testcase name="zeroMutantStrings" classname="mutant.business.BusinessMutantTest" time="0.001"/>
+  <testcase name="zeroMutantStrings" classname="mutant.business.BusinessMutantTest" time="0"/>
   <testcase name="oneMutantStringInRows" classname="mutant.business.BusinessMutantTest" time="0.001"/>
 </testsuite>

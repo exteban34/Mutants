@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: mutant.business.BusinessMutantTest
 -------------------------------------------------------------------------------
-Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.51 s - in mutant.business.BusinessMutantTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.529 s - in mutant.business.BusinessMutantTest

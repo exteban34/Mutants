@@ -103,9 +103,11 @@ public class BusinessMutant {
 		int numberofMutantStringInDNA = numberOfMutantStringsInRows(array)+ numberOfMutantStringsInColumns(array)+ numberOfMutantStringsInDiagonals(array) ;
 		if (2<= numberofMutantStringInDNA) {
 			mutantDynamoBDPersistence.saveMutantAnalisys(jsonDNA, true);
+			mutantDynamoBDPersistence.updateMutantAnalisysStats(true);
 			return true;
 		}else {
 			mutantDynamoBDPersistence.saveMutantAnalisys(jsonDNA, false);
+			mutantDynamoBDPersistence.updateMutantAnalisysStats(false);
 			return false;
 		}		
 	}
