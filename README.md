@@ -29,11 +29,17 @@ Body Ejemplo: { "dna": [ "AAAA", "AAAA", "AAAA","AAAA"] }
 
 Respuestas:
 
-      - 200 OK :  Cuando se realiza una validacion de adn mutante (guarda el registro en la bd)
+200 OK :  Cuando se realiza una validacion de adn mutante (guarda el registro en la bd)      
           ![Dynamo](/images/200.PNG)
-      - 403 Forbidden : Cuando el adn ingresado no es mutante
+          
+          
+
+403 Forbidden : Cuando el adn ingresado no es mutante      
           ![Dynamo](/images/403.PNG)
-      - 400 Bad Request: Cuando el servicio es invocado con una matriz no valida (Matriz no cuadrada)
+          
+          
+
+400 Bad Request: Cuando el servicio es invocado con una matriz no valida (Matriz no cuadrada)      
           ![Dynamo](/images/400.PNG)
 
 
