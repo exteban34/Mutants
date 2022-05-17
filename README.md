@@ -48,8 +48,8 @@ Se adjunta Una PostMan Collection con los consumos de los servicios  (MutantsCol
 
 # Deploy 
 
-El proyecto se compila a traves del comando  `maven install`  y genera un jar (se encuentra en la carpeta target) el cual se despliega en cada Lambda en AWS, 
-tambien se debe indicar la ruta del Handler que : 
+El proyecto se compila a traves del comando  `maven install`  y genera un jar `java-mutant-1.0-SNAPSHOT.jar` (se encuentra en la carpeta target) 
+el cual se despliega en cada Lambda en AWS, tambien se debe indicar la ruta del Handler que actuara como disparador/manejador de la function: 
 ![LambdaDeploy](/images/Lambda_Deploy.PNG)
 
 
