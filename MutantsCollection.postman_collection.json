@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "80aff619-eb22-427d-89df-bbecdc1e7c18",
+		"name": "MutantsCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mutantsFunction/mutant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"dna\": [ \"AGGA\", \"AAAA\", \"AAAA\",\"AAAA\"] }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://33m8f61yji.execute-api.us-east-1.amazonaws.com/Test/mutantsFunction/mutant",
+					"protocol": "https",
+					"host": [
+						"33m8f61yji",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Test",
+						"mutantsFunction",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mutantsFunction/stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://33m8f61yji.execute-api.us-east-1.amazonaws.com/Test/mutantsFunction/stats",
+					"protocol": "https",
+					"host": [
+						"33m8f61yji",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Test",
+						"mutantsFunction",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
