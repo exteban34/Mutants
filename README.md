@@ -17,7 +17,7 @@ En el repositorio se encuentra:
 - `pom.xml` -  Archivo pom para el build con Maven.
 
 
-#API
+# API 
 
 Servicio verificar ADN y guardar en BD    :
 
@@ -46,8 +46,12 @@ Servicio consultar estadisticas d elos analisis realizados:
 Se adjunta Una PostMan Collection con los consumos de los servicios  (MutantsCollection.postman_collection.json)
 
 
-#Deploy
+# Deploy 
 
 El proyecto se compila a traves del comando  `maven install`  y genera un jar (se encuentra en la carpeta target) el cual se despliega en cada Lambda en AWS, 
 tambien se debe indicar la ruta del Handler que : 
 ![LambdaDeploy](/images/Lambda_Deploy.PNG)
+
+
+
+
