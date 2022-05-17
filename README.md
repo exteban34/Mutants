@@ -24,8 +24,11 @@ Servicio verificar ADN y guardar en BD    :
 https://33m8f61yji.execute-api.us-east-1.amazonaws.com/Test/mutantsFunction/mutant
 
 Metodo : POST
+
 Body Ejemplo: { "dna": [ "AAAA", "AAAA", "AAAA","AAAA"] } 
+
 Respuestas:
+
       - 200 OK :  Cuando se realiza una validacion de adn mutante (guarda el registro en la bd)
           ![Dynamo](/images/200.PNG)
       - 403 Forbidden : Cuando el adn ingresado no es mutante
@@ -39,6 +42,7 @@ Servicio consultar estadisticas d elos analisis realizados:
  https://33m8f61yji.execute-api.us-east-1.amazonaws.com/Test/mutantsFunction/stats
  
  Metodo : GET
+ 
  Respuestas: {"numberOfMutants": 3.0, "numberofAnalisys": 6.0, "ratio": 0.5 }
   ![Dynamo](/images/stats.PNG)
   
